@@ -66,3 +66,9 @@ cli команда: code .
 
 Робимо коміт наших pмін до активної гілки
 cli команда: git commit -am "complete readme file"
+
+Отримуємо повідомлення про успішність коміту
+[development 346be3e] complete readme file
+1 file changed, 67 insertions(+)
+
+Переходимо до гілки main
