@@ -38,7 +38,7 @@ cli команда: git add README.md
 Робимо коміт наших змін з відповідним повідомленням
 cli команда: git commit -m "init"
 
-//Два поперtдні кроки можна об`єднати в одну команду: git commit -am "init"
+!! Два попередні кроки можна об`єднати в одну команду: git commit -am "init"
 
 Бачимо відповідне повідомлення про коміт
 [main (root-commit) 7b23537] init
@@ -72,3 +72,55 @@ cli команда: git commit -am "complete readme file"
 1 file changed, 67 insertions(+)
 
 Переходимо до гілки main
+cli команда: git checkout main
+
+Отримуємо повідомлення що ми на потрібній гілці
+Switched to branch 'main'
+
+Обєднуємо зміни з development до main
+cli команда: git merge development
+
+Отримуємо повідомлення про успішний merge
+Updating 7b23537..d1cd90e
+Fast-forward
+README.md | 73 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1 file changed, 73 insertions(+)
+
+Перевіряємо наш статус
+cli команда: git status
+
+Отримуємо повідомлення про те що все закомічено
+On branch main
+nothing to commit, working tree clean
+
+!! Далі переходимо до свого gitHub аккаунту та сворємо новий репозиторій "new-project"
+!! Та копіюємо https адресу нашого репозиторію
+!! Повертаємося до командного рядку
+
+Привязуємо свій локальний репозиторій до віддаленого
+cli команда: git remote add origin <https адреса віддаленого репозиторію на GitHub>
+
+Перевіряємо чи відбулася привязка
+cli команда: git remote -v
+
+Отримуємо повідомлення з шляхами для fetch та push
+origin https://github.com/<Your nikName>/new-project.git (fetch)
+origin https://github.com/<Your nikName>/new-project.git (push)
+
+Пушимо зміни у віддалений репозиторій
+cli команда: git push -u origin main
+
+Отримуємо повідомлення про вдале копіювання файлів
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 1.71 KiB | 1.71 MiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Pidvysotskyi/new-project.git
+
+- [new branch] main -> main
+  branch 'main' set up to track 'origin/main'.
+
+Готово
